@@ -3,17 +3,22 @@ package com.example.fthcn.multipeerconnectivity_android;
 
 
 
+
+import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import com.example.bluetoothlib.BLSetup;
 import com.example.bluetoothlib.LibraryClass;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    private final static int REQUEST_ENABLE_BT = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +34,19 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
                 LibraryClass testLog = new LibraryClass();
                 testLog.printLog("Hello World!");
+               // BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+               // if (bluetoothAdapter == null) {
+               //     // Device doesn't support Bluetooth
+               // }
+//
+               // if (!bluetoothAdapter.isEnabled()) {
+               //     Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+               //     startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+               // }
+                BLSetup blEnableRequest = new BLSetup();
+                blEnableRequest.asd();
+
+
             }
         });
     }
